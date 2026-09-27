@@ -1,0 +1,72 @@
+{
+  "strategy": "pcap_wise",
+  "schema": "20_features",
+  "features_used": [
+    "flow_duration",
+    "flow_packet_count",
+    "flow_bytes",
+    "flow_syn_ratio",
+    "flow_ack_ratio",
+    "flow_rst_ratio",
+    "flow_fin_ratio",
+    "flow_size_mean",
+    "flow_size_var",
+    "flow_interval_mean",
+    "flow_interval_var",
+    "host_port_entropy",
+    "host_dst_entropy",
+    "host_dst_diversity",
+    "host_syn_ratio",
+    "host_failed_flow_ratio",
+    "host_packet_rate",
+    "host_interval_mean",
+    "host_interval_var",
+    "host_packet_size_var"
+  ],
+  "features_count": 20,
+  "model": "xgboost",
+  "seed": 99,
+  "train_time_sec": 0.0729,
+  "predict_time_sec": 0.0096,
+  "hyperparameters": {
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "random_state": 99,
+    "n_jobs": -1,
+    "learning_rate": 0.1,
+    "max_depth": 5
+  },
+  "validation_f1": 1.0,
+  "test_metrics": {
+    "accuracy": 0.9837033090629255,
+    "precision": 0.9839186450761308,
+    "recall": 0.9990058516327943,
+    "f1": 0.9914048523713928,
+    "mcc": 0.8438983618620572,
+    "roc_auc": 0.8697529258163971,
+    "pr_auc": 0.983875782606074,
+    "roc_auc_raw_score": 0.8697529258163971,
+    "prevalence": 0.9408038832652578,
+    "confusion_matrix": {
+      "tn": 7405,
+      "fp": 2595,
+      "fn": 158,
+      "tp": 158772,
+      "matrix": [
+        [
+          7405,
+          2595
+        ],
+        [
+          158,
+          158772
+        ]
+      ]
+    }
+  },
+  "system_info": {
+    "python_version": "3.12.3",
+    "cpu_count": 16,
+    "ram_gb": 16.43
+  }
+}

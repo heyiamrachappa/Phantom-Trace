@@ -1,0 +1,61 @@
+{
+  "strategy": "time_wise",
+  "schema": "11_features",
+  "features_used": [
+    "flow_duration",
+    "flow_packet_count",
+    "flow_bytes",
+    "flow_syn_ratio",
+    "flow_ack_ratio",
+    "flow_rst_ratio",
+    "flow_fin_ratio",
+    "flow_size_mean",
+    "flow_size_var",
+    "flow_interval_mean",
+    "flow_interval_var"
+  ],
+  "features_count": 11,
+  "model": "svm",
+  "seed": 42,
+  "train_time_sec": 0.5607,
+  "predict_time_sec": 0.0238,
+  "hyperparameters": {
+    "probability": true,
+    "random_state": 42,
+    "C": 5.0,
+    "kernel": "rbf"
+  },
+  "validation_f1": 0.997907949790795,
+  "test_metrics": {
+    "accuracy": 0.9980207817911925,
+    "precision": 0.9989888776541962,
+    "recall": 0.9969727547931383,
+    "f1": 0.997979797979798,
+    "mcc": 0.9960418901547915,
+    "roc_auc": 0.999502316969228,
+    "pr_auc": 0.9996507404722937,
+    "roc_auc_raw_score": 0.999502316969228,
+    "prevalence": 0.4903513112320633,
+    "confusion_matrix": {
+      "tn": 1029,
+      "fp": 1,
+      "fn": 3,
+      "tp": 988,
+      "matrix": [
+        [
+          1029,
+          1
+        ],
+        [
+          3,
+          988
+        ]
+      ]
+    }
+  },
+  "system_info": {
+    "python_version": "3.12.3",
+    "cpu_count": 16,
+    "ram_gb": 16.43
+  }
+}

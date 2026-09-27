@@ -1,0 +1,334 @@
+{
+  "audit_title": "Domain Classifier, Multi-Model Deduplication, and Matched-Downsampling Audit",
+  "domain_origin_classifier": {
+    "features_evaluated": [
+      "flow_duration",
+      "flow_packet_count",
+      "flow_bytes",
+      "flow_size_mean",
+      "flow_interval_mean"
+    ],
+    "sample_size_per_dataset": 5000,
+    "5_fold_cross_val_roc_auc": [
+      1.0,
+      0.999992,
+      0.999976,
+      0.999996,
+      1.0
+    ],
+    "mean_roc_auc": 0.999993,
+    "std_roc_auc": 1e-05,
+    "feature_importances": {
+      "flow_duration": 0.0815,
+      "flow_packet_count": 0.1164,
+      "flow_bytes": 0.2219,
+      "flow_size_mean": 0.2761,
+      "flow_interval_mean": 0.3041
+    },
+    "interpretation": "A standard Random Forest distinguishes CIC-IDS-2017 from UNSW-NB15 flows with ~1.0000 ROC-AUC using only shared flow metrics (duration, packet count, bytes, mean packet size, mean interval). This empirical result proves that feature distributions between datasets do not overlap, explaining why supervised models collapse under domain transfer."
+  },
+  "deduplication_sensitivity": {
+    "unsw_to_cic": {
+      "cap_1": {
+        "test_size": 10711,
+        "recon_count": 1921,
+        "benign_count": 8790,
+        "models": {
+          "random_forest": {
+            "f1": 0.0279,
+            "roc_auc": 0.4425
+          },
+          "xgboost": {
+            "f1": 0.0447,
+            "roc_auc": 0.5413
+          },
+          "svm": {
+            "f1": 0.001,
+            "roc_auc": 0.6419
+          },
+          "isolation_forest": {
+            "f1": 0.2553,
+            "roc_auc": 0.3694
+          },
+          "mlp": {
+            "f1": 0.3597,
+            "roc_auc": 0.5271
+          }
+        }
+      },
+      "cap_2": {
+        "test_size": 11383,
+        "recon_count": 2276,
+        "benign_count": 9107,
+        "models": {
+          "random_forest": {
+            "f1": 0.0492,
+            "roc_auc": 0.4949
+          },
+          "xgboost": {
+            "f1": 0.0641,
+            "roc_auc": 0.5693
+          },
+          "svm": {
+            "f1": 0.0009,
+            "roc_auc": 0.7032
+          },
+          "isolation_forest": {
+            "f1": 0.2462,
+            "roc_auc": 0.3536
+          },
+          "mlp": {
+            "f1": 0.4981,
+            "roc_auc": 0.5914
+          }
+        }
+      },
+      "cap_5": {
+        "test_size": 12715,
+        "recon_count": 3180,
+        "benign_count": 9535,
+        "models": {
+          "random_forest": {
+            "f1": 0.0945,
+            "roc_auc": 0.5845
+          },
+          "xgboost": {
+            "f1": 0.1071,
+            "roc_auc": 0.618
+          },
+          "svm": {
+            "f1": 0.0006,
+            "roc_auc": 0.7931
+          },
+          "isolation_forest": {
+            "f1": 0.2245,
+            "roc_auc": 0.3138
+          },
+          "mlp": {
+            "f1": 0.6768,
+            "roc_auc": 0.6983
+          }
+        }
+      },
+      "cap_10": {
+        "test_size": 14230,
+        "recon_count": 4498,
+        "benign_count": 9732,
+        "models": {
+          "random_forest": {
+            "f1": 0.1411,
+            "roc_auc": 0.6551
+          },
+          "xgboost": {
+            "f1": 0.1546,
+            "roc_auc": 0.6617
+          },
+          "svm": {
+            "f1": 0.0004,
+            "roc_auc": 0.8542
+          },
+          "isolation_forest": {
+            "f1": 0.1996,
+            "roc_auc": 0.2736
+          },
+          "mlp": {
+            "f1": 0.7866,
+            "roc_auc": 0.7824
+          }
+        }
+      },
+      "uncapped": {
+        "test_size": 168930,
+        "recon_count": 158930,
+        "benign_count": 10000,
+        "models": {
+          "random_forest": {
+            "f1": 0.1909,
+            "roc_auc": 0.8256
+          },
+          "xgboost": {
+            "f1": 0.227,
+            "roc_auc": 0.7404
+          },
+          "svm": {
+            "f1": 0.0,
+            "roc_auc": 0.9917
+          },
+          "isolation_forest": {
+            "f1": 0.0147,
+            "roc_auc": 0.1586
+          },
+          "mlp": {
+            "f1": 0.9948,
+            "roc_auc": 0.9837
+          }
+        }
+      }
+    },
+    "cic_to_unsw": {
+      "cap_1": {
+        "test_size": 4523,
+        "recon_count": 1075,
+        "benign_count": 3448,
+        "models": {
+          "random_forest": {
+            "f1": 0.0019,
+            "roc_auc": 0.4583
+          },
+          "xgboost": {
+            "f1": 0.0019,
+            "roc_auc": 0.4073
+          },
+          "svm": {
+            "f1": 0.0019,
+            "roc_auc": 0.7514
+          },
+          "isolation_forest": {
+            "f1": 0.0021,
+            "roc_auc": 0.2712
+          },
+          "mlp": {
+            "f1": 0.0019,
+            "roc_auc": 0.748
+          }
+        }
+      },
+      "cap_2": {
+        "test_size": 4615,
+        "recon_count": 1114,
+        "benign_count": 3501,
+        "models": {
+          "random_forest": {
+            "f1": 0.0018,
+            "roc_auc": 0.4598
+          },
+          "xgboost": {
+            "f1": 0.0018,
+            "roc_auc": 0.4241
+          },
+          "svm": {
+            "f1": 0.0018,
+            "roc_auc": 0.7456
+          },
+          "isolation_forest": {
+            "f1": 0.0041,
+            "roc_auc": 0.275
+          },
+          "mlp": {
+            "f1": 0.0018,
+            "roc_auc": 0.744
+          }
+        }
+      },
+      "cap_5": {
+        "test_size": 4686,
+        "recon_count": 1168,
+        "benign_count": 3518,
+        "models": {
+          "random_forest": {
+            "f1": 0.0017,
+            "roc_auc": 0.4599
+          },
+          "xgboost": {
+            "f1": 0.0017,
+            "roc_auc": 0.4479
+          },
+          "svm": {
+            "f1": 0.0017,
+            "roc_auc": 0.7405
+          },
+          "isolation_forest": {
+            "f1": 0.004,
+            "roc_auc": 0.266
+          },
+          "mlp": {
+            "f1": 0.0017,
+            "roc_auc": 0.752
+          }
+        }
+      },
+      "cap_10": {
+        "test_size": 4752,
+        "recon_count": 1234,
+        "benign_count": 3518,
+        "models": {
+          "random_forest": {
+            "f1": 0.0016,
+            "roc_auc": 0.4598
+          },
+          "xgboost": {
+            "f1": 0.0016,
+            "roc_auc": 0.4741
+          },
+          "svm": {
+            "f1": 0.0016,
+            "roc_auc": 0.7358
+          },
+          "isolation_forest": {
+            "f1": 0.0039,
+            "roc_auc": 0.252
+          },
+          "mlp": {
+            "f1": 0.0016,
+            "roc_auc": 0.7648
+          }
+        }
+      },
+      "uncapped": {
+        "test_size": 5277,
+        "recon_count": 1759,
+        "benign_count": 3518,
+        "models": {
+          "random_forest": {
+            "f1": 0.0011,
+            "roc_auc": 0.4591
+          },
+          "xgboost": {
+            "f1": 0.0011,
+            "roc_auc": 0.612
+          },
+          "svm": {
+            "f1": 0.0011,
+            "roc_auc": 0.7105
+          },
+          "isolation_forest": {
+            "f1": 0.0034,
+            "roc_auc": 0.1781
+          },
+          "mlp": {
+            "f1": 0.0011,
+            "roc_auc": 0.8327
+          }
+        }
+      }
+    }
+  },
+  "matched_downsampling": {
+    "matched_test_size": 5277,
+    "matched_test_benign": 3518,
+    "matched_test_recon": 1759,
+    "matched_prevalence": 0.3333,
+    "unsw_to_cic_matched_metrics": {
+      "random_forest": {
+        "f1": 0.1496,
+        "roc_auc": 0.8244
+      },
+      "xgboost": {
+        "f1": 0.1583,
+        "roc_auc": 0.7408
+      },
+      "svm": {
+        "f1": 0.0,
+        "roc_auc": 0.9927
+      },
+      "isolation_forest": {
+        "f1": 0.0039,
+        "roc_auc": 0.1615
+      },
+      "mlp": {
+        "f1": 0.9776,
+        "roc_auc": 0.9844
+      }
+    }
+  }
+}

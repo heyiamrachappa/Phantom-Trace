@@ -1,0 +1,69 @@
+{
+  "strategy": "cic_to_unsw",
+  "schema": "20_features",
+  "features_used": [
+    "flow_duration",
+    "flow_packet_count",
+    "flow_bytes",
+    "flow_syn_ratio",
+    "flow_ack_ratio",
+    "flow_rst_ratio",
+    "flow_fin_ratio",
+    "flow_size_mean",
+    "flow_size_var",
+    "flow_interval_mean",
+    "flow_interval_var",
+    "host_port_entropy",
+    "host_dst_entropy",
+    "host_dst_diversity",
+    "host_syn_ratio",
+    "host_failed_flow_ratio",
+    "host_packet_rate",
+    "host_interval_mean",
+    "host_interval_var",
+    "host_packet_size_var"
+  ],
+  "features_count": 20,
+  "model": "isolation_forest",
+  "seed": 13,
+  "train_time_sec": 0.2114,
+  "predict_time_sec": 0.0127,
+  "hyperparameters": {
+    "random_state": 13,
+    "n_jobs": -1,
+    "contamination": 0.1
+  },
+  "validation_f1": 0.9750812567713976,
+  "test_metrics": {
+    "accuracy": 0.6649611521697935,
+    "precision": 0.15384615384615385,
+    "recall": 0.0011370096645821489,
+    "f1": 0.002257336343115124,
+    "mcc": -0.018921406922703544,
+    "roc_auc": 0.8323567644156699,
+    "pr_auc": 0.7351995158136555,
+    "roc_auc_raw_score": 0.8323567644156699,
+    "prevalence": 0.3333333333333333,
+    "confusion_matrix": {
+      "tn": 3507,
+      "fp": 11,
+      "fn": 1757,
+      "tp": 2,
+      "matrix": [
+        [
+          3507,
+          11
+        ],
+        [
+          1757,
+          2
+        ]
+      ]
+    }
+  },
+  "system_info": {
+    "python_version": "3.12.3",
+    "cpu_count": 16,
+    "ram_gb": 16.43
+  }
+}

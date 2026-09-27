@@ -1,0 +1,111 @@
+{
+  "audit_title": "Isolation Forest Score Polarity and AUC Inversion Audit",
+  "mathematical_principle": "In scikit-learn, IsolationForest.decision_function(X) returns (score_samples(X) - offset_). By convention in scikit-learn: negative values represent outliers (anomalies), positive values represent inliers (normal instances). Anomaly score is mathematically -decision_function(X). When class 1 is defined as Reconnaissance (anomalies), evaluating roc_auc_score(y_true, score) requires score to be positively correlated with the anomaly class. If the model isolates normal traffic faster due to high training contamination of scan traffic, score semantics invert.",
+  "conditions": {
+    "unsw_to_cic": {
+      "train_size": 4303,
+      "train_class_ratio_recon_to_benign": 0.521,
+      "test_size": 168930,
+      "test_prevalence": 0.9408,
+      "score_statistics": {
+        "mean_raw_decision_function_benign": -0.0968,
+        "mean_raw_decision_function_recon": 0.0757,
+        "mean_negated_score_benign": 0.0968,
+        "mean_negated_score_recon": -0.0757
+      },
+      "metrics": {
+        "roc_auc_raw_decision_function": 0.8414,
+        "roc_auc_negated_decision_function": 0.1586,
+        "pr_auc_raw_decision_function": 0.9645,
+        "pr_auc_negated_decision_function": 0.8605,
+        "sum_of_raw_and_negated_roc_auc": 1.0
+      },
+      "reversal_detected": false,
+      "explanation": "Under domain shift from an external training set, the test reconnaissance distribution is isolated faster than inlier reference patterns."
+    },
+    "cic_to_unsw": {
+      "train_size": 5186,
+      "train_class_ratio_recon_to_benign": 1.022,
+      "test_size": 5277,
+      "test_prevalence": 0.3333,
+      "score_statistics": {
+        "mean_raw_decision_function_benign": 0.0135,
+        "mean_raw_decision_function_recon": 0.1409,
+        "mean_negated_score_benign": -0.0135,
+        "mean_negated_score_recon": -0.1409
+      },
+      "metrics": {
+        "roc_auc_raw_decision_function": 0.8219,
+        "roc_auc_negated_decision_function": 0.1781,
+        "pr_auc_raw_decision_function": 0.7262,
+        "pr_auc_negated_decision_function": 0.2529,
+        "sum_of_raw_and_negated_roc_auc": 1.0
+      },
+      "reversal_detected": false,
+      "explanation": "Under domain shift from an external training set, the test reconnaissance distribution is isolated faster than inlier reference patterns."
+    },
+    "time_wise": {
+      "train_size": 7071,
+      "train_class_ratio_recon_to_benign": 1.047,
+      "test_size": 2021,
+      "test_prevalence": 0.4904,
+      "score_statistics": {
+        "mean_raw_decision_function_benign": 0.0917,
+        "mean_raw_decision_function_recon": 0.1947,
+        "mean_negated_score_benign": -0.0917,
+        "mean_negated_score_recon": -0.1947
+      },
+      "metrics": {
+        "roc_auc_raw_decision_function": 0.9971,
+        "roc_auc_negated_decision_function": 0.0029,
+        "pr_auc_raw_decision_function": 0.9983,
+        "pr_auc_negated_decision_function": 0.3623,
+        "sum_of_raw_and_negated_roc_auc": 1.0
+      },
+      "reversal_detected": true,
+      "explanation": "In this condition, training data has high reconnaissance density. Reconnaissance flows have repetitive/homogeneous timing and packet length patterns, while benign traffic is heterogeneous. The isolation trees isolate heterogeneous benign flows faster (at shallower depths), assigning them more negative anomaly scores than the reconnaissance flows. Negating the score causes reconnaissance flows to receive lower ranks than benign flows, resulting in a near-perfect ROC-AUC inversion."
+    },
+    "pcap_wise": {
+      "train_size": 86,
+      "train_class_ratio_recon_to_benign": 4.733,
+      "test_size": 168930,
+      "test_prevalence": 0.9408,
+      "score_statistics": {
+        "mean_raw_decision_function_benign": -0.1146,
+        "mean_raw_decision_function_recon": 0.0411,
+        "mean_negated_score_benign": 0.1146,
+        "mean_negated_score_recon": -0.0411
+      },
+      "metrics": {
+        "roc_auc_raw_decision_function": 0.9955,
+        "roc_auc_negated_decision_function": 0.0045,
+        "pr_auc_raw_decision_function": 0.9997,
+        "pr_auc_negated_decision_function": 0.933,
+        "sum_of_raw_and_negated_roc_auc": 1.0
+      },
+      "reversal_detected": true,
+      "explanation": "In this condition, training data has high reconnaissance density. Reconnaissance flows have repetitive/homogeneous timing and packet length patterns, while benign traffic is heterogeneous. The isolation trees isolate heterogeneous benign flows faster (at shallower depths), assigning them more negative anomaly scores than the reconnaissance flows. Negating the score causes reconnaissance flows to receive lower ranks than benign flows, resulting in a near-perfect ROC-AUC inversion."
+    },
+    "host_wise": {
+      "train_size": 70,
+      "train_class_ratio_recon_to_benign": 9.0,
+      "test_size": 14,
+      "test_prevalence": 0.3571,
+      "score_statistics": {
+        "mean_raw_decision_function_benign": 0.0009,
+        "mean_raw_decision_function_recon": 0.084,
+        "mean_negated_score_benign": -0.0009,
+        "mean_negated_score_recon": -0.084
+      },
+      "metrics": {
+        "roc_auc_raw_decision_function": 1.0,
+        "roc_auc_negated_decision_function": 0.0,
+        "pr_auc_raw_decision_function": 1.0,
+        "pr_auc_negated_decision_function": 0.3571,
+        "sum_of_raw_and_negated_roc_auc": null
+      },
+      "reversal_detected": true,
+      "explanation": "In this condition, training data has high reconnaissance density. Reconnaissance flows have repetitive/homogeneous timing and packet length patterns, while benign traffic is heterogeneous. The isolation trees isolate heterogeneous benign flows faster (at shallower depths), assigning them more negative anomaly scores than the reconnaissance flows. Negating the score causes reconnaissance flows to receive lower ranks than benign flows, resulting in a near-perfect ROC-AUC inversion."
+    }
+  }
+}

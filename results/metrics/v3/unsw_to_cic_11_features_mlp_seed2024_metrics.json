@@ -1,0 +1,63 @@
+{
+  "strategy": "unsw_to_cic",
+  "schema": "11_features",
+  "features_used": [
+    "flow_duration",
+    "flow_packet_count",
+    "flow_bytes",
+    "flow_syn_ratio",
+    "flow_ack_ratio",
+    "flow_rst_ratio",
+    "flow_fin_ratio",
+    "flow_size_mean",
+    "flow_size_var",
+    "flow_interval_mean",
+    "flow_interval_var"
+  ],
+  "features_count": 11,
+  "model": "mlp",
+  "seed": 2024,
+  "train_time_sec": 2.2593,
+  "predict_time_sec": 0.0507,
+  "hyperparameters": {
+    "max_iter": 200,
+    "random_state": 2024,
+    "alpha": 0.0001,
+    "hidden_layer_sizes": [
+      100
+    ]
+  },
+  "validation_f1": 0.9292929292929293,
+  "test_metrics": {
+    "accuracy": 0.989688036464808,
+    "precision": 0.9983766645529486,
+    "recall": 0.9906499716856477,
+    "f1": 0.9944983103306698,
+    "mcc": 0.914212213997009,
+    "roc_auc": 0.9793785896306549,
+    "pr_auc": 0.9941591802309673,
+    "roc_auc_raw_score": 0.9793785896306549,
+    "prevalence": 0.9408038832652578,
+    "confusion_matrix": {
+      "tn": 9744,
+      "fp": 256,
+      "fn": 1486,
+      "tp": 157444,
+      "matrix": [
+        [
+          9744,
+          256
+        ],
+        [
+          1486,
+          157444
+        ]
+      ]
+    }
+  },
+  "system_info": {
+    "python_version": "3.12.3",
+    "cpu_count": 16,
+    "ram_gb": 16.43
+  }
+}

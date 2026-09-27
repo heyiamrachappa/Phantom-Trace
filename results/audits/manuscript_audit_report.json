@@ -1,0 +1,707 @@
+{
+  "manuscript_file": "/home/yi/My-Projects/Stealth-Network-Reconnaissance/manuscript.md",
+  "audit_timestamp": 1790489309.9141684,
+  "checks": [
+    {
+      "category": "Dataset Accounting",
+      "item": "CIC-IDS-2017 Total Rows",
+      "expected_value": 286467,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "CIC-IDS-2017 PortScan Rows",
+      "expected_value": 158930,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "CIC-IDS-2017 Benign Rows",
+      "expected_value": 127537,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "UNSW-NB15 Subset Rows",
+      "expected_value": 5277,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "UNSW-NB15 Reconnaissance Rows",
+      "expected_value": 1759,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "UNSW-NB15 Benign Rows",
+      "expected_value": 3518,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Synthetic Corpus Total Rows",
+      "expected_value": 102,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Synthetic Corpus Scan Rows",
+      "expected_value": 84,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Synthetic Corpus Benign Rows",
+      "expected_value": 18,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Pcap-wise Test Set",
+      "expected_value": 168930,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Time-wise Train Set",
+      "expected_value": 7071,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Time-wise Val Set",
+      "expected_value": 1010,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Time-wise Test Set",
+      "expected_value": 2021,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Host-wise Train",
+      "expected_value": 70,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Host-wise Val",
+      "expected_value": 18,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Host-wise Test",
+      "expected_value": 14,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Cross-dataset (UNSW->CIC) Train Set",
+      "expected_value": 4303,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Cross-dataset (UNSW->CIC) Val Set",
+      "expected_value": 538,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Cross-dataset (CIC->UNSW) Train Set",
+      "expected_value": 5186,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Dataset Accounting",
+      "item": "Cross-dataset (CIC->UNSW) Val Set",
+      "expected_value": 916,
+      "found_in_manuscript": true,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "random_forest F1",
+      "expected_value": 0.999,
+      "found_in_manuscript": 0.999,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "random_forest MCC",
+      "expected_value": 0.998,
+      "found_in_manuscript": 0.998,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "random_forest ROC-AUC",
+      "expected_value": 1.0,
+      "found_in_manuscript": 1.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "random_forest PR-AUC",
+      "expected_value": 1.0,
+      "found_in_manuscript": 1.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "xgboost F1",
+      "expected_value": 0.999,
+      "found_in_manuscript": 0.999,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "xgboost MCC",
+      "expected_value": 0.998,
+      "found_in_manuscript": 0.998,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "xgboost ROC-AUC",
+      "expected_value": 1.0,
+      "found_in_manuscript": 1.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "xgboost PR-AUC",
+      "expected_value": 1.0,
+      "found_in_manuscript": 1.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "svm F1",
+      "expected_value": 0.998,
+      "found_in_manuscript": 0.998,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "svm MCC",
+      "expected_value": 0.995,
+      "found_in_manuscript": 0.995,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "svm ROC-AUC",
+      "expected_value": 1.0,
+      "found_in_manuscript": 1.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "svm PR-AUC",
+      "expected_value": 1.0,
+      "found_in_manuscript": 1.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "isolation_forest F1",
+      "expected_value": 0.996,
+      "found_in_manuscript": 0.996,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "isolation_forest MCC",
+      "expected_value": 0.992,
+      "found_in_manuscript": 0.992,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "isolation_forest ROC-AUC",
+      "expected_value": 0.997,
+      "found_in_manuscript": 0.997,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "isolation_forest PR-AUC",
+      "expected_value": 0.998,
+      "found_in_manuscript": 0.998,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "mlp F1",
+      "expected_value": 0.999,
+      "found_in_manuscript": 0.999,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "mlp MCC",
+      "expected_value": 0.998,
+      "found_in_manuscript": 0.998,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "mlp ROC-AUC",
+      "expected_value": 0.999,
+      "found_in_manuscript": 0.999,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (time_wise)",
+      "item": "mlp PR-AUC",
+      "expected_value": 0.999,
+      "found_in_manuscript": 0.999,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "random_forest F1",
+      "expected_value": 0.992,
+      "found_in_manuscript": 0.992,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "random_forest MCC",
+      "expected_value": 0.863,
+      "found_in_manuscript": 0.863,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "random_forest ROC-AUC",
+      "expected_value": 0.994,
+      "found_in_manuscript": 0.994,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "random_forest PR-AUC",
+      "expected_value": 0.999,
+      "found_in_manuscript": 0.999,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "xgboost F1",
+      "expected_value": 0.991,
+      "found_in_manuscript": 0.991,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "xgboost MCC",
+      "expected_value": 0.844,
+      "found_in_manuscript": 0.844,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "xgboost ROC-AUC",
+      "expected_value": 0.87,
+      "found_in_manuscript": 0.87,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "xgboost PR-AUC",
+      "expected_value": 0.984,
+      "found_in_manuscript": 0.984,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "svm F1",
+      "expected_value": 0.0,
+      "found_in_manuscript": 0.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "svm MCC",
+      "expected_value": -0.024,
+      "found_in_manuscript": -0.024,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "svm ROC-AUC",
+      "expected_value": 0.499,
+      "found_in_manuscript": 0.499,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "svm PR-AUC",
+      "expected_value": 0.941,
+      "found_in_manuscript": 0.941,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "isolation_forest F1",
+      "expected_value": 0.596,
+      "found_in_manuscript": 0.596,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "isolation_forest MCC",
+      "expected_value": 0.533,
+      "found_in_manuscript": 0.533,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "isolation_forest ROC-AUC",
+      "expected_value": 0.997,
+      "found_in_manuscript": 0.997,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "isolation_forest PR-AUC",
+      "expected_value": 1.0,
+      "found_in_manuscript": 1.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "mlp F1",
+      "expected_value": 0.002,
+      "found_in_manuscript": 0.002,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "mlp MCC",
+      "expected_value": -0.025,
+      "found_in_manuscript": -0.025,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "mlp ROC-AUC",
+      "expected_value": 0.64,
+      "found_in_manuscript": 0.64,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (pcap_wise)",
+      "item": "mlp PR-AUC",
+      "expected_value": 0.95,
+      "found_in_manuscript": 0.95,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "random_forest F1",
+      "expected_value": 0.001,
+      "found_in_manuscript": 0.001,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "random_forest MCC",
+      "expected_value": 0.019,
+      "found_in_manuscript": 0.019,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "random_forest ROC-AUC",
+      "expected_value": 0.409,
+      "found_in_manuscript": 0.409,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "random_forest PR-AUC",
+      "expected_value": 0.333,
+      "found_in_manuscript": 0.333,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "xgboost F1",
+      "expected_value": 0.001,
+      "found_in_manuscript": 0.001,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "xgboost MCC",
+      "expected_value": 0.019,
+      "found_in_manuscript": 0.019,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "xgboost ROC-AUC",
+      "expected_value": 0.612,
+      "found_in_manuscript": 0.612,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "xgboost PR-AUC",
+      "expected_value": 0.54,
+      "found_in_manuscript": 0.54,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "svm F1",
+      "expected_value": 0.001,
+      "found_in_manuscript": 0.001,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "svm MCC",
+      "expected_value": 0.019,
+      "found_in_manuscript": 0.019,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "svm ROC-AUC",
+      "expected_value": 0.449,
+      "found_in_manuscript": 0.449,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "svm PR-AUC",
+      "expected_value": 0.328,
+      "found_in_manuscript": 0.328,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "isolation_forest F1",
+      "expected_value": 0.001,
+      "found_in_manuscript": 0.001,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "isolation_forest MCC",
+      "expected_value": 0.002,
+      "found_in_manuscript": 0.002,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "isolation_forest ROC-AUC",
+      "expected_value": 0.809,
+      "found_in_manuscript": 0.809,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "isolation_forest PR-AUC",
+      "expected_value": 0.667,
+      "found_in_manuscript": 0.667,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "mlp F1",
+      "expected_value": 0.001,
+      "found_in_manuscript": 0.001,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "mlp MCC",
+      "expected_value": 0.019,
+      "found_in_manuscript": 0.019,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "mlp ROC-AUC",
+      "expected_value": 0.833,
+      "found_in_manuscript": 0.833,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (cic_to_unsw)",
+      "item": "mlp PR-AUC",
+      "expected_value": 0.696,
+      "found_in_manuscript": 0.696,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "random_forest F1",
+      "expected_value": 0.516,
+      "found_in_manuscript": 0.516,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "random_forest MCC",
+      "expected_value": 0.172,
+      "found_in_manuscript": 0.172,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "random_forest ROC-AUC",
+      "expected_value": 0.834,
+      "found_in_manuscript": 0.834,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "random_forest PR-AUC",
+      "expected_value": 0.975,
+      "found_in_manuscript": 0.975,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "xgboost F1",
+      "expected_value": 0.227,
+      "found_in_manuscript": 0.227,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "xgboost MCC",
+      "expected_value": -0.072,
+      "found_in_manuscript": -0.072,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "xgboost ROC-AUC",
+      "expected_value": 0.74,
+      "found_in_manuscript": 0.74,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "xgboost PR-AUC",
+      "expected_value": 0.975,
+      "found_in_manuscript": 0.975,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "svm F1",
+      "expected_value": 0.0,
+      "found_in_manuscript": 0.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "svm MCC",
+      "expected_value": -0.029,
+      "found_in_manuscript": -0.029,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "svm ROC-AUC",
+      "expected_value": 0.992,
+      "found_in_manuscript": 0.992,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "svm PR-AUC",
+      "expected_value": 0.999,
+      "found_in_manuscript": 0.999,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "isolation_forest F1",
+      "expected_value": 0.067,
+      "found_in_manuscript": 0.067,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "isolation_forest MCC",
+      "expected_value": -0.203,
+      "found_in_manuscript": -0.203,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "isolation_forest ROC-AUC",
+      "expected_value": 0.837,
+      "found_in_manuscript": 0.837,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "isolation_forest PR-AUC",
+      "expected_value": 0.963,
+      "found_in_manuscript": 0.963,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "mlp F1",
+      "expected_value": 0.995,
+      "found_in_manuscript": 0.995,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "mlp MCC",
+      "expected_value": 0.918,
+      "found_in_manuscript": 0.918,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "mlp ROC-AUC",
+      "expected_value": 0.983,
+      "found_in_manuscript": 0.983,
+      "status": "PASS"
+    },
+    {
+      "category": "Performance Metrics (unsw_to_cic)",
+      "item": "mlp PR-AUC",
+      "expected_value": 0.996,
+      "found_in_manuscript": 0.996,
+      "status": "PASS"
+    }
+  ],
+  "v3_pipeline_ready": true
+}

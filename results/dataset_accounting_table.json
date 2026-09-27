@@ -1,0 +1,484 @@
+{
+  "sources": {
+    "cic_ids_2017_friday": {
+      "exists": true,
+      "path": "/home/yi/My-Projects/Stealth-Network-Reconnaissance/dataset/public/cic-ids-2017/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv.parquet",
+      "size_bytes": 15688379,
+      "sha256": "a49a5f5230ef15fbd60079a93db12c5a549913dfed66a142592c27c7264b08d7",
+      "dataset_name": "CIC-IDS-2017",
+      "capture_day": "Friday, July 7, 2017 (Afternoon)",
+      "official_url": "https://www.unb.ca/cic/datasets/ids-2017.html",
+      "access_date": "2024-03-15",
+      "attack_type": "PortScan (Nmap TCP/UDP)"
+    },
+    "cic_ids_2017_tuesday": {
+      "exists": true,
+      "path": "/home/yi/My-Projects/Stealth-Network-Reconnaissance/dataset/public/cic-ids-2017/Tuesday-WorkingHours.pcap_ISCX.csv.parquet",
+      "size_bytes": 45553171,
+      "sha256": "9fda00044283648f09ce6257a6bddc39c4e3a967d7a609ff808247727a4fcabb",
+      "dataset_name": "CIC-IDS-2017",
+      "capture_day": "Tuesday, July 4, 2017",
+      "official_url": "https://www.unb.ca/cic/datasets/ids-2017.html",
+      "access_date": "2024-03-15",
+      "attack_type": "FTP-Patator, SSH-Patator (Brute Force; no PortScan)"
+    },
+    "unsw_nb15_part1": {
+      "exists": true,
+      "path": "/home/yi/My-Projects/Stealth-Network-Reconnaissance/dataset/public/unsw-nb15/UNSW-NB15_1.csv",
+      "size_bytes": 168979718,
+      "sha256": "7d851bbeabd27894ce39c8e78835c73341fc946652fb7743b9eff193b55eb511",
+      "dataset_name": "UNSW-NB15 (Partition 1 of 4 raw CSVs)",
+      "capture_day": "January 22, 2015 to February 16, 2015",
+      "official_url": "https://research.unsw.edu.au/projects/unsw-nb15-dataset",
+      "access_date": "2024-03-15",
+      "attack_type": "Reconnaissance (generic coarse label), Generic, Exploits, Fuzzers, DoS, etc."
+    },
+    "synthetic_corpus_raw": {
+      "exists": true,
+      "path": "/home/yi/My-Projects/Stealth-Network-Reconnaissance/dataset/raw_features.csv",
+      "size_bytes": 19189,
+      "sha256": "9239af6f75af2093813cb178b38cad3043d7df899dc12d6af489902af30211fe",
+      "dataset_name": "PhantomTrace Synthetic Lab Corpus",
+      "capture_day": "Programmatic generation / lab capture",
+      "generator_script": "dataset/lab/ pcap files extracted via feature_extraction/extractor.py",
+      "access_date": "2024-04-01",
+      "attack_type": "SYN, FIN, NULL, XMAS, UDP scan, subnet sweep, slow-rate, distributed scan"
+    }
+  },
+  "raw_statistics": {
+    "cic_ids_2017_friday": {
+      "total_rows": 286467,
+      "columns": 79,
+      "null_values_total": 15,
+      "nan_rows": 15,
+      "inf_values": 727,
+      "exact_duplicate_rows": 72353,
+      "label_counts": {
+        "PortScan": 158930,
+        "BENIGN": 127537
+      }
+    },
+    "unsw_nb15_part1": {
+      "total_rows": 700001,
+      "columns": 49,
+      "null_values_total": 677786,
+      "nan_rows": 677786,
+      "exact_duplicate_rows": 59213,
+      "binary_label_counts": {
+        "0": 677786,
+        "1": 22215
+      },
+      "attack_category_counts": {
+        "Generic": 7522,
+        "Exploits": 5409,
+        "Fuzzers": 5051,
+        "Reconnaissance": 1759,
+        "DoS": 1167,
+        "Backdoors": 534,
+        "Analysis": 526,
+        "Shellcode": 223,
+        "Worms": 24
+      }
+    },
+    "synthetic_raw": {
+      "total_rows": 102,
+      "columns": 28,
+      "null_values_total": 0,
+      "exact_duplicate_rows": 0,
+      "label_counts": {
+        "1": 84,
+        "0": 18
+      }
+    }
+  },
+  "cleaning_and_mapping_statistics": {
+    "cic_mapped": {
+      "path": "dataset/mapped/cic_mapped.parquet",
+      "total_rows": 286467,
+      "columns": 23,
+      "label_0_benign": 127537,
+      "label_1_recon": 158930,
+      "null_values": 0,
+      "inf_values": 0,
+      "feature_duplicate_rows": 181718,
+      "cleaning_applied": [
+        "Whitespace stripped from raw column names",
+        "Flow duration converted from microseconds to seconds (divided by 1e6)",
+        "Forward and backward packets summed for flow_packet_count",
+        "Forward and backward lengths summed for flow_bytes",
+        "TCP flag counts divided by flow_packet_count (safe zero division replacement)",
+        "NaN and infinite values imputed with 0.0",
+        "Host-level features (9) filled with 0.0 constant",
+        "Label mapped: 'PortScan' -> 1, 'BENIGN' -> 0"
+      ]
+    },
+    "unsw_mapped": {
+      "path": "dataset/mapped/unsw_mapped.parquet",
+      "total_rows": 5277,
+      "columns": 23,
+      "label_0_benign": 3518,
+      "label_1_recon": 1759,
+      "null_values": 0,
+      "inf_values": 0,
+      "feature_duplicate_rows": 754,
+      "cleaning_applied": [
+        "Filtered raw partition 1 (700,001 rows) to reconnaissance attack category (1,759 rows)",
+        "Sampled benign traffic at 2:1 ratio (min(1,759 * 2, 677,786) = 3,518 rows) -> 5,277 total rows",
+        "Flow duration kept in seconds",
+        "spkts + dpkts summed for flow_packet_count; sbytes + dbytes for flow_bytes",
+        "flow_syn_ratio approximated via state field (SYN/S0/S1 -> 1.0, else 0.0)",
+        "flow_rst_ratio approximated via state field (RST/RSTO/RSTR/RSTRH -> 1.0, else 0.0)",
+        "flow_ack_ratio, flow_fin_ratio, flow_size_var, flow_interval_var unavailable -> filled with 0.0",
+        "flow_size_mean computed as flow_bytes / flow_packet_count",
+        "flow_interval_mean approximated as (sintpkt + dintpkt) / 2.0",
+        "Host-level features (9) filled with 0.0 constant",
+        "Label mapped: reconnaissance -> 1, benign -> 0"
+      ]
+    }
+  },
+  "splits": {
+    "pcap_wise": {
+      "train": {
+        "total": 86,
+        "benign": 15,
+        "recon": 71,
+        "duplicates": 74
+      },
+      "val": {
+        "total": 16,
+        "benign": 3,
+        "recon": 13
+      },
+      "test": {
+        "total": 168930,
+        "benign": 10000,
+        "recon": 158930,
+        "duplicates": 158219
+      },
+      "leakage": {
+        "train_unique_patterns": 12,
+        "test_unique_patterns": 10711,
+        "overlapping_patterns": 0,
+        "test_rows_identical_to_train_features": 0,
+        "test_leakage_rate": 0.0
+      }
+    },
+    "time_wise": {
+      "train": {
+        "total": 7071,
+        "benign": 3455,
+        "recon": 3616,
+        "duplicates": 3638
+      },
+      "val": {
+        "total": 1010,
+        "benign": 533,
+        "recon": 477
+      },
+      "test": {
+        "total": 2021,
+        "benign": 1030,
+        "recon": 991,
+        "duplicates": 843
+      },
+      "leakage": {
+        "train_unique_patterns": 3433,
+        "test_unique_patterns": 1178,
+        "overlapping_patterns": 267,
+        "test_rows_identical_to_train_features": 1107,
+        "test_leakage_rate": 0.5477
+      }
+    },
+    "host_wise": {
+      "train": {
+        "total": 70,
+        "benign": 7,
+        "recon": 63,
+        "duplicates": 60
+      },
+      "val": {
+        "total": 18,
+        "benign": 2,
+        "recon": 16
+      },
+      "test": {
+        "total": 14,
+        "benign": 9,
+        "recon": 5,
+        "duplicates": 10
+      },
+      "leakage": {
+        "train_unique_patterns": 10,
+        "test_unique_patterns": 4,
+        "overlapping_patterns": 1,
+        "test_rows_identical_to_train_features": 5,
+        "test_leakage_rate": 0.3571
+      }
+    },
+    "cross_dataset": {
+      "train": {
+        "total": 4303,
+        "benign": 2829,
+        "recon": 1474,
+        "duplicates": 666
+      },
+      "val": {
+        "total": 538,
+        "benign": 353,
+        "recon": 185
+      },
+      "test": {
+        "total": 168930,
+        "benign": 10000,
+        "recon": 158930,
+        "duplicates": 158219
+      },
+      "leakage": {
+        "train_unique_patterns": 3637,
+        "test_unique_patterns": 10711,
+        "overlapping_patterns": 0,
+        "test_rows_identical_to_train_features": 0,
+        "test_leakage_rate": 0.0
+      }
+    }
+  },
+  "feature_mapping_catalog": {
+    "flow_duration": {
+      "harmonized_name": "flow_duration",
+      "cic_source": "Flow Duration",
+      "unsw_source": "dur",
+      "unit": "seconds",
+      "transform_cic": "microseconds / 1e6",
+      "transform_unsw": "direct (already seconds)",
+      "imputation": "0.0 on NaN"
+    },
+    "flow_packet_count": {
+      "harmonized_name": "flow_packet_count",
+      "cic_source": "Total Fwd Packets + Total Backward Packets",
+      "unsw_source": "spkts + dpkts",
+      "unit": "packet count",
+      "transform_cic": "sum(fwd, bwd)",
+      "transform_unsw": "sum(src, dst)",
+      "imputation": "0.0 on NaN"
+    },
+    "flow_bytes": {
+      "harmonized_name": "flow_bytes",
+      "cic_source": "Total Length of Fwd Packets + Total Length of Bwd Packets",
+      "unsw_source": "sbytes + dbytes",
+      "unit": "bytes",
+      "transform_cic": "sum(fwd_len, bwd_len)",
+      "transform_unsw": "sum(sbytes, dbytes)",
+      "imputation": "0.0 on NaN"
+    },
+    "flow_syn_ratio": {
+      "harmonized_name": "flow_syn_ratio",
+      "cic_source": "SYN Flag Count",
+      "unsw_source": "state (categorical: SYN, S0, S1)",
+      "unit": "ratio [0, 1]",
+      "transform_cic": "SYN Flag Count / flow_packet_count",
+      "transform_unsw": "1.0 if state in [SYN, S0, S1] else 0.0 (approximated)",
+      "imputation": "0.0 on NaN / zero division"
+    },
+    "flow_ack_ratio": {
+      "harmonized_name": "flow_ack_ratio",
+      "cic_source": "ACK Flag Count",
+      "unsw_source": "UNAVAILABLE",
+      "unit": "ratio [0, 1]",
+      "transform_cic": "ACK Flag Count / flow_packet_count",
+      "transform_unsw": "0.0 constant imputation",
+      "imputation": "0.0 on NaN / unavailable"
+    },
+    "flow_rst_ratio": {
+      "harmonized_name": "flow_rst_ratio",
+      "cic_source": "RST Flag Count",
+      "unsw_source": "state (categorical: RST, RSTO, RSTR, RSTRH)",
+      "unit": "ratio [0, 1]",
+      "transform_cic": "RST Flag Count / flow_packet_count",
+      "transform_unsw": "1.0 if state in [RST, RSTO, RSTR, RSTRH] else 0.0 (approximated)",
+      "imputation": "0.0 on NaN / zero division"
+    },
+    "flow_fin_ratio": {
+      "harmonized_name": "flow_fin_ratio",
+      "cic_source": "FIN Flag Count",
+      "unsw_source": "UNAVAILABLE",
+      "unit": "ratio [0, 1]",
+      "transform_cic": "FIN Flag Count / flow_packet_count",
+      "transform_unsw": "0.0 constant imputation",
+      "imputation": "0.0 on NaN / unavailable"
+    },
+    "flow_size_mean": {
+      "harmonized_name": "flow_size_mean",
+      "cic_source": "Packet Length Mean",
+      "unsw_source": "sbytes, dbytes, spkts, dpkts",
+      "unit": "bytes/packet",
+      "transform_cic": "direct",
+      "transform_unsw": "flow_bytes / flow_packet_count",
+      "imputation": "0.0 on NaN / zero division"
+    },
+    "flow_size_var": {
+      "harmonized_name": "flow_size_var",
+      "cic_source": "Packet Length Variance",
+      "unsw_source": "UNAVAILABLE",
+      "unit": "bytes^2",
+      "transform_cic": "direct",
+      "transform_unsw": "0.0 constant imputation",
+      "imputation": "0.0 on NaN / unavailable"
+    },
+    "flow_interval_mean": {
+      "harmonized_name": "flow_interval_mean",
+      "cic_source": "Flow IAT Mean",
+      "unsw_source": "sintpkt, dintpkt",
+      "unit": "microseconds in CIC, seconds in UNSW (scale difference!)",
+      "transform_cic": "direct (microseconds)",
+      "transform_unsw": "(sintpkt + dintpkt) / 2.0 (seconds)",
+      "imputation": "0.0 on NaN"
+    },
+    "flow_interval_var": {
+      "harmonized_name": "flow_interval_var",
+      "cic_source": "Flow IAT Std",
+      "unsw_source": "UNAVAILABLE",
+      "unit": "time^2",
+      "transform_cic": "(Flow IAT Std)^2",
+      "transform_unsw": "0.0 constant imputation",
+      "imputation": "0.0 on NaN / unavailable"
+    },
+    "host_aggregated_features_9": {
+      "harmonized_names": [
+        "host_port_entropy",
+        "host_dst_entropy",
+        "host_dst_diversity",
+        "host_syn_ratio",
+        "host_failed_flow_ratio",
+        "host_packet_rate",
+        "host_interval_mean",
+        "host_interval_var",
+        "host_packet_size_var"
+      ],
+      "cic_source": "UNAVAILABLE in flow CSV (requires raw PCAP host tracking)",
+      "unsw_source": "UNAVAILABLE in flow CSV",
+      "synthetic_source": "Extracted from raw PCAP state tracking",
+      "unit": "various (entropy, count, rate, seconds)",
+      "transform_cic": "0.0 constant imputation",
+      "transform_unsw": "0.0 constant imputation",
+      "transform_synthetic": "direct computation",
+      "imputation": "0.0 constant for all public flow benchmark datasets"
+    }
+  },
+  "manuscript_reconciliation": {
+    "cic_ids_2017_rows": {
+      "claimed": 286467,
+      "actual": 286467,
+      "status": "EXACT_MATCH"
+    },
+    "cic_portscan_rows": {
+      "claimed": 158930,
+      "actual": 158930,
+      "status": "EXACT_MATCH"
+    },
+    "cic_benign_rows": {
+      "claimed": 127537,
+      "actual": 127537,
+      "status": "EXACT_MATCH"
+    },
+    "unsw_rows_used": {
+      "claimed": 5277,
+      "actual": 5277,
+      "status": "EXACT_MATCH"
+    },
+    "unsw_recon_rows": {
+      "claimed": 1759,
+      "actual": 1759,
+      "status": "EXACT_MATCH"
+    },
+    "unsw_benign_rows": {
+      "claimed": 3518,
+      "actual": 3518,
+      "status": "EXACT_MATCH"
+    },
+    "synthetic_rows": {
+      "claimed": 102,
+      "actual": 102,
+      "status": "EXACT_MATCH"
+    },
+    "synthetic_recon": {
+      "claimed": 84,
+      "actual": 84,
+      "status": "EXACT_MATCH"
+    },
+    "synthetic_benign": {
+      "claimed": 18,
+      "actual": 18,
+      "status": "EXACT_MATCH"
+    },
+    "pcap_wise_train": {
+      "claimed": 86,
+      "actual": 86,
+      "status": "EXACT_MATCH"
+    },
+    "pcap_wise_val": {
+      "claimed": 16,
+      "actual": 16,
+      "status": "EXACT_MATCH"
+    },
+    "pcap_wise_test": {
+      "claimed": 168930,
+      "actual": 168930,
+      "status": "EXACT_MATCH"
+    },
+    "time_wise_train": {
+      "claimed": 7071,
+      "actual": 7071,
+      "status": "EXACT_MATCH"
+    },
+    "time_wise_val": {
+      "claimed": 1010,
+      "actual": 1010,
+      "status": "EXACT_MATCH"
+    },
+    "time_wise_test": {
+      "claimed": 2021,
+      "actual": 2021,
+      "status": "EXACT_MATCH"
+    },
+    "cross_dataset_train": {
+      "claimed": 4303,
+      "actual": 4303,
+      "status": "EXACT_MATCH"
+    },
+    "cross_dataset_val": {
+      "claimed": 538,
+      "actual": 538,
+      "status": "EXACT_MATCH"
+    },
+    "cross_dataset_test": {
+      "claimed": 168930,
+      "actual": 168930,
+      "status": "EXACT_MATCH"
+    },
+    "host_wise_train": {
+      "claimed_in_manuscript": 5186,
+      "actual_in_disk_split": 70,
+      "status": "MISMATCH_DETECTED",
+      "root_cause": "In commit 0aabb4c, host_wise was CIC(sampled 6000)+synthetic -> 5186 train / 916 val / 5277 UNSW test. In commit d28f818 (HEAD), build_splits.py lines 171-196 changed host_wise to synthetic-only src_ip split (70 train / 18 val / 14 test), but manuscript.md line 76 was NOT updated and still claims 5,186 train / 916 val / 5,277 test."
+    },
+    "host_wise_val": {
+      "claimed_in_manuscript": 916,
+      "actual_in_disk_split": 18,
+      "status": "MISMATCH_DETECTED",
+      "root_cause": "Same as above; actual on disk is 18."
+    },
+    "host_wise_test": {
+      "claimed_in_manuscript": 5277,
+      "actual_in_disk_split": 14,
+      "status": "MISMATCH_DETECTED",
+      "root_cause": "Same as above; actual on disk is 14."
+    },
+    "synthetic_train_csv_duplicate_anomaly": {
+      "file": "dataset/train_features.csv",
+      "rows": 100,
+      "duplicates": 89,
+      "status": "ANOMALY_DOCUMENTED",
+      "root_cause": "train_features.csv has 89 duplicate rows due to repeated feature vectors in synthetic generation; raw_features.csv has 102 rows with 0 duplicates."
+    }
+  }
+}

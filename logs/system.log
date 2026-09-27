@@ -640,3 +640,16 @@
 2026-07-29 21:38:22,166 [INFO] (pipeline.py:60) - Total labeled flows: 10 anomalies / 12 total flows.
 2026-07-29 21:38:22,169 [INFO] (pipeline.py:115) - Saved raw feature dataset to /home/yi/My-Projects/Stealth-Network-Reconnaissance/dataset/raw_features.csv
 2026-07-29 21:38:22,189 [INFO] (pipeline.py:205) - Saved split report to /home/yi/My-Projects/Stealth-Network-Reconnaissance/results/split_report.json
+2026-09-01 22:52:57,428 [INFO] (tracker.py:140) - Session pruner thread started.
+2026-09-01 22:52:57,511 [INFO] (engine.py:31) - Loading StandardScaler from models/scaler.joblib
+2026-09-01 22:52:58,243 [INFO] (engine.py:42) - Loading ML classifier: 'random_forest' from models/random_forest_model.joblib
+2026-09-01 23:08:05,782 [INFO] (tracker.py:140) - Session pruner thread started.
+2026-09-01 23:08:05,860 [INFO] (engine.py:31) - Loading StandardScaler from models/scaler.joblib
+2026-09-01 23:08:06,272 [INFO] (engine.py:42) - Loading ML classifier: 'random_forest' from models/random_forest_model.joblib
+2026-09-01 23:09:42,806 [INFO] (tracker.py:140) - Session pruner thread started.
+2026-09-01 23:09:42,912 [INFO] (engine.py:31) - Loading StandardScaler from models/scaler.joblib
+2026-09-01 23:09:42,917 [INFO] (engine.py:42) - Loading ML classifier: 'xgboost' from models/xgboost_model.joblib
+2026-09-01 23:17:20,987 [INFO] (parser.py:90) - Opening and parsing capture file: /home/yi/My-Projects/Stealth-Network-Reconnaissance/pcaps/uploaded_temp.pcap
+2026-09-01 23:17:30,206 [INFO] (parser.py:139) - Successfully processed PCAP: 51127 packets loaded across 623.93 seconds.
+2026-09-01 23:17:30,262 [INFO] (engine.py:31) - Loading StandardScaler from models/scaler.joblib
+2026-09-01 23:17:30,263 [INFO] (engine.py:42) - Loading ML classifier: 'xgboost' from models/xgboost_model.joblib
