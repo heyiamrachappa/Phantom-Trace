@@ -9,7 +9,7 @@ Produces:
 
 Outputs:
   - results/metrics/v3/full_confusion_matrices.json
-  - results/metrics/v3/compiled_manuscript_tables.md
+  - results/metrics/v3/compiled_benchmark_tables.md
 """
 
 import os, sys, json
@@ -169,7 +169,7 @@ def build_markdown_report(all_cm):
             tot = int(cmd['tn_mean'] + cmd['fp_mean'] + cmd['fn_mean'] + cmd['tp_mean'])
             doc.append(f"| {strat} | {m} | {tn} | {fp} | {fn} | {tp} | {tot:,} |")
             
-    out_md = METRICS_DIR / "compiled_manuscript_tables.md"
+    out_md = METRICS_DIR / "compiled_benchmark_tables.md"
     with open(out_md, "w") as f:
         f.write("\n".join(doc))
     print(f"Compiled markdown tables saved: {out_md}")

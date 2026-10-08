@@ -39,7 +39,3 @@ To reproduce the entire benchmark and generate all artifacts:
    ```bash
    python3 experiments/compile_tables_and_matrices.py
    ```
-6. **Verify Manuscript Text Against Generated Values**:
-   ```bash
-   python3 experiments/audit_manuscript_values.py
-   ```
