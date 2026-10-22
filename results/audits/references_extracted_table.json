@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "authors": "Cantone M, Marrocco C, Bria A",
+    "year": 2024,
+    "title": "Machine learning in network intrusion detection: a cross-dataset generalization study",
+    "venue": "IEEE Access 12:144489\u2013144508",
+    "dataset": "CIC-IDS2017, UNSW-NB15, CSE-CIC-IDS2018, NSL-KDD",
+    "method": "Random Forest, Decision Tree, MLP cross-dataset evaluation across standard NIDS benchmarks",
+    "limitation": "Finds cross-dataset generalization degrades severely across diverse feature sets; models overfit to source network artifacts."
+  },
+  {
+    "id": 2,
+    "authors": "Almuhanna R, Dardouri S",
+    "year": 2025,
+    "title": "A deep learning/machine learning approach for anomaly based network intrusion detection",
+    "venue": "Front Artif Intell 8:1625891",
+    "dataset": "CIC-IDS2017, NSL-KDD",
+    "method": "Deep learning and unsupervised anomaly detection models",
+    "limitation": "Evaluates primarily in-distribution without cross-dataset transfer validation; threshold selection relies on validation balance."
+  },
+  {
+    "id": 3,
+    "authors": "Rainio O, Teuho J, Kl\u00e9n R",
+    "year": 2024,
+    "title": "Evaluation metrics and statistical tests for machine learning",
+    "venue": "Sci Rep 14:15724",
+    "dataset": "Multiple benchmark domains / synthetic benchmarks",
+    "method": "Methodological / statistical analysis of classifier performance metrics and hypothesis tests",
+    "limitation": "Reviews pitfalls in single-metric reporting; demonstrates F1 is sensitive to class imbalance and recommends MCC and paired testing."
+  },
+  {
+    "id": 4,
+    "authors": "Semmelrock H, Ross-Hellauer T, Kopeinik S et al.",
+    "year": 2024,
+    "title": "Reproducibility in machine learning-based research: overview, barriers and drivers",
+    "venue": "arXiv:2406.14325",
+    "dataset": "Meta-analysis / ML literature survey",
+    "method": "Reproducibility assessment of machine learning studies",
+    "limitation": "Identifies lack of seed reporting, incomplete dataset splitting disclosures, and missing artifact availability as systemic barriers."
+  },
+  {
+    "id": 5,
+    "authors": "Xue P, Shen Y, Ma H, Hu M",
+    "year": 2025,
+    "title": "An area-aware efficient internet-wide port scan approach for IoT",
+    "venue": "Electronics 14(4):1267",
+    "dataset": "Internet-wide scan traces / IoT simulated traffic",
+    "method": "Area-aware scanning strategy and ML-based detection",
+    "limitation": "Focuses on scanning optimization from attacker perspective; intrusion evaluation lacks temporal holdout validation."
+  },
+  {
+    "id": 6,
+    "authors": "Altidor JB, Talhi C",
+    "year": 2024,
+    "title": "Enhancing port scan and DDoS attack detection using genetic and machine learning algorithms",
+    "venue": "2024 7th Conf Cloud IoT, IEEE",
+    "dataset": "CIC-IDS2017 / custom lab traces",
+    "method": "Genetic algorithm feature selection with Random Forest and SVM",
+    "limitation": "Aggregates port scanning with DDoS into mixed attack classes; relies on standard random train-test partitions with flow leakage risk."
+  },
+  {
+    "id": 7,
+    "authors": "Okumura K, Kobayashi R",
+    "year": 2025,
+    "title": "Penetration testing without port scanning using EPSS-based vulnerability lists",
+    "venue": "CANDARW 2025, IEEE, pp 274\u2013279",
+    "dataset": "EPSS vulnerability database / host vulnerability profiles",
+    "method": "Vulnerability-prioritization driven reconnaissance avoidance",
+    "limitation": "Focuses on host vulnerability selection rather than network flow-level traffic analysis or detector generalizability."
+  },
+  {
+    "id": 8,
+    "authors": "Huang M, Lin Y, Li N et al.",
+    "year": 2025,
+    "title": "CARD: robustness-preserving transfer learning for network intrusion detection",
+    "venue": "IEEE Trans Dependable Secure Comput 22(5):5134\u20135151",
+    "dataset": "CIC-IDS2017, UNSW-NB15, TON_IoT",
+    "method": "Adversarial domain adaptation and transfer learning for NIDS",
+    "limitation": "Addresses domain shift via transfer learning but notes source models without adaptation suffer massive cross-domain drops."
+  },
+  {
+    "id": 9,
+    "authors": "Yao J, Tian L, Wei Z, Sun G",
+    "year": 2025,
+    "title": "Overcoming emergency HTTP/3 DDoS attack detection: a domain adaptation solution with GNN",
+    "venue": "Comput Netw 271:111611",
+    "dataset": "HTTP/3 simulated and testbed traffic",
+    "method": "Graph Neural Networks with domain adaptation",
+    "limitation": "Evaluates DDoS attacks rather than stealthy reconnaissance; evaluates unidirectional adaptation."
+  },
+  {
+    "id": 10,
+    "authors": "Anser O, Fran\u00e7ois J, Chrisment I, Kondo D",
+    "year": 2025,
+    "title": "TATA: benchmark NIDS test sets assessment and targeted augmentation",
+    "venue": "ESORICS 2025, LNCS, pp 21\u201341",
+    "dataset": "CIC-IDS2017, UNSW-NB15",
+    "method": "Test set assessment framework exposing benchmark flaws and traffic artifact inflation",
+    "limitation": "Shows public NIDS test sets contain repeated flows and artifacts that artificially inflate F1 scores by up to 30% under random k-fold."
+  },
+  {
+    "id": 11,
+    "authors": "Pawlicki M, Szelest S, Kozik R, Chora\u015b M",
+    "year": 2025,
+    "title": "SHAP insights into domain adaptation in netflow-based network intrusion detection",
+    "venue": "ARES 2025, LNCS vol 15999, Springer",
+    "dataset": "NF-UNSW-NB15-v2, NF-ToN-IoT-v2",
+    "method": "TreeSHAP attribution under domain adaptation",
+    "limitation": "Analyzes NetFlow features under shift but does not examine bidirectional transfer asymmetry or duplicate-frequency inflation."
+  },
+  {
+    "id": 12,
+    "authors": "Wu Z, Liao X, He B et al.",
+    "year": 2025,
+    "title": "Federated intrusion detection under non-IID traffic",
+    "venue": "ProvSec 2025, pp 202\u2013217",
+    "dataset": "UNSW-NB15, CIC-IDS2017 partitioned into non-IID clients",
+    "method": "Federated learning averaging with anomaly detection",
+    "limitation": "Focuses on client weight aggregation under non-IID distributions without testing cross-dataset deployment or threshold transfer."
+  },
+  {
+    "id": 13,
+    "authors": "Alang K, Khanna A, Nalluri S",
+    "year": 2026,
+    "title": "Enhancing network security: anomaly detection using generalised isolation forest and explainable AI",
+    "venue": "ICGIS 2025, Springer",
+    "dataset": "NSL-KDD, UNSW-NB15",
+    "method": "Generalized Isolation Forest with XAI (LIME/SHAP)",
+    "limitation": "Assumes anomaly scores directly indicate intrusion without analyzing threshold shift or score polarity reversal under cross-domain transfer."
+  },
+  {
+    "id": 14,
+    "authors": "Luay M, Layeghy S, Hosseininoorbin S et al.",
+    "year": 2025,
+    "title": "Temporal analysis of NetFlow datasets for NIDS",
+    "venue": "arXiv:2503.04404",
+    "dataset": "NetFlow versions of CIC-IDS2017, UNSW-NB15, TON_IoT",
+    "method": "Temporal split evaluation vs random split evaluation",
+    "limitation": "Demonstrates temporal concept drift causes marked performance drop compared to random splits, proving temporal leakage in standard splits."
+  },
+  {
+    "id": 15,
+    "authors": "Khalid HYI, Aldabagh NBI",
+    "year": 2024,
+    "title": "A survey on the latest intrusion detection datasets for SDN environments",
+    "venue": "ETASR 14(2):13190\u201313200",
+    "dataset": "Survey of InSDN, CIC-DDoS2019, CIC-IDS2017",
+    "method": "Comprehensive dataset comparison survey",
+    "limitation": "Notes substantial synthetic artifacts, class imbalances, and lack of realistic background reconnaissance in existing public datasets."
+  },
+  {
+    "id": 16,
+    "authors": "Bilal MA, Islam IU, Idrees S et al.",
+    "year": 2026,
+    "title": "Dataset-centric evaluation of federated intrusion detection models in IoT networks",
+    "venue": "Sci Rep. https://doi.org/10.1038/s41598-025-32567-w",
+    "dataset": "IoT-23, Edge-IIoTset, BoT-IoT",
+    "method": "Federated learning evaluation across IoT benchmarks",
+    "limitation": "Exposes performance collapse when evaluating across differing IoT network topologies due to dataset-specific feature distributions."
+  },
+  {
+    "id": 17,
+    "authors": "Psychogyios K, Papadakis A, Bourou S et al.",
+    "year": 2024,
+    "title": "Deep learning for intrusion detection systems in time series data",
+    "venue": "Future Internet 16(3):73",
+    "dataset": "CIC-IDS2017, CSE-CIC-IDS2018",
+    "method": "LSTM, GRU, CNN sequential models",
+    "limitation": "Evaluates sequential traffic but pools diverse attack categories together without isolating stealthy low-rate scanning probes."
+  },
+  {
+    "id": 18,
+    "authors": "Pawlicki M, Pawlicka A, Szelest S et al.",
+    "year": 2025,
+    "title": "Class-based SHAP analysis for improved explainability insights in NIDS",
+    "venue": "ICAI 2024, CCIS vol 2387, Springer",
+    "dataset": "UNSW-NB15, CIC-IDS2017",
+    "method": "Class-conditioned SHAP analysis for multiclass intrusion detection",
+    "limitation": "Restricted to in-distribution explainability; does not address how feature importance shifts when detectors are applied to foreign domains."
+  },
+  {
+    "id": 19,
+    "authors": "Grzeczkowicz R, Neal C, Baghalizadeh-Moghadam N et al.",
+    "year": 2025,
+    "title": "Classifying insider threat scenarios through explainable AI",
+    "venue": "CRiSIS 2024, LNCS vol 15456, Springer",
+    "dataset": "CERT insider threat dataset",
+    "method": "Ensemble classifiers with SHAP / LIME explainers",
+    "limitation": "Focuses on host audit logs and insider threat scenarios rather than network-layer reconnaissance traffic."
+  },
+  {
+    "id": 20,
+    "authors": "Goldschmidt P, Chud\u00e1 D",
+    "year": 2025,
+    "title": "Network intrusion datasets: a survey, limitations, and recommendations",
+    "venue": "Comput Secur 156:104510",
+    "dataset": "Survey covering 25+ NIDS datasets including KDD99, CIC-IDS2017, UNSW-NB15",
+    "method": "Comprehensive methodological critique and dataset taxonomy",
+    "limitation": "Catalogues severe limitations: duplicate flows, synthetic label errors, unrealistic traffic rates, and absence of standardized feature definitions."
+  },
+  {
+    "id": 21,
+    "authors": "Belarbi O, Spyridopoulos T, Anthi E et al.",
+    "year": 2025,
+    "title": "Gotham Dataset 2025: a reproducible large-scale IoT network dataset for intrusion detection",
+    "venue": "arXiv:2502.03134",
+    "dataset": "Gotham IoT dataset",
+    "method": "Dataset generation testbed with reproducible traffic capture",
+    "limitation": "Argues legacy datasets (CIC-IDS2017, UNSW-NB15) contain heavy synthetic flow duplication and lack modern multi-stage reconnaissance tactics."
+  },
+  {
+    "id": 22,
+    "authors": "Kostas K, Just M, Lones MA",
+    "year": 2025,
+    "title": "Individual packet features are a risk to model generalisation in ML-based intrusion detection",
+    "venue": "IEEE Netw Lett 7:66\u201370",
+    "dataset": "CIC-IDS2017, CTU-13",
+    "method": "Feature representation study (packet header vs flow aggregates)",
+    "limitation": "Demonstrates specific low-level packet features fail to generalize across networks, acting as shortcuts that inflate in-distribution scores."
+  },
+  {
+    "id": 23,
+    "authors": "Aceto G, Giampaolo F, Guida C et al.",
+    "year": 2024,
+    "title": "Synthetic and privacy-preserving traffic trace generation using generative AI for training NIDS",
+    "venue": "J Netw Comput Appl 229:103926",
+    "dataset": "Mirai, CIC-IDS2017, proprietary enterprise traces",
+    "method": "Generative adversarial networks and diffusion models for traffic synthesis",
+    "limitation": "Evaluates synthetic trace generation fidelity but notes synthetic-to-real transfer frequently exhibits domain drop on real enterprise networks."
+  },
+  {
+    "id": 24,
+    "authors": "Shaikhanova A, Kuznetsov O, Tokkuliyeva A et al.",
+    "year": 2025,
+    "title": "Security audit of IoT device networks: a reproducible ML framework",
+    "venue": "Sensors 25(24):7519",
+    "dataset": "IoT honeypot and testbed traces",
+    "method": "Reproducible ML evaluation pipeline with statistical hypothesis testing",
+    "limitation": "Highlights that lack of statistical hypothesis testing and omission of variance across runs lead to fragile benchmark conclusions."
+  },
+  {
+    "id": 25,
+    "authors": "Mao J, Yang X, Hu B, Lu Y, Yin G",
+    "year": 2025,
+    "title": "Intrusion detection system based on multi-level feature extraction and inductive network",
+    "venue": "Electronics 14(1):189",
+    "dataset": "CIC-IDS2017, UNSW-NB15",
+    "method": "Inductive neural network with multi-level feature representation",
+    "limitation": "Reports high cross-entropy accuracy but uses random train/test splits without evaluating temporal holdout or bidirectional cross-dataset transfer."
+  }
+]

@@ -17,8 +17,8 @@
   "features_count": 11,
   "model": "random_forest",
   "seed": 42,
-  "train_time_sec": 1.3669,
-  "predict_time_sec": 0.119,
+  "train_time_sec": 0.9949,
+  "predict_time_sec": 0.0601,
   "hyperparameters": {
     "random_state": 42,
     "class_weight": "balanced",
@@ -28,28 +28,28 @@
   },
   "validation_f1": 0.9973045822102425,
   "test_metrics": {
-    "accuracy": 0.15116912330551116,
-    "precision": 0.9247170739708053,
-    "recall": 0.10642421191719625,
-    "f1": 0.19088031328115743,
-    "mcc": -0.02375328975977029,
-    "roc_auc": 0.825575433524193,
-    "pr_auc": 0.9742230054293577,
-    "roc_auc_raw_score": 0.825575433524193,
+    "accuracy": 0.1724442076599775,
+    "precision": 0.932651861232982,
+    "recall": 0.12974265399861573,
+    "f1": 0.22779622070382624,
+    "mcc": -0.013404778623036179,
+    "roc_auc": 0.8341361904612092,
+    "pr_auc": 0.9726374888284393,
+    "roc_auc_raw_score": 0.8341361904612092,
     "prevalence": 0.9408038832652578,
     "confusion_matrix": {
-      "tn": 8623,
-      "fp": 1377,
-      "fn": 142016,
-      "tp": 16914,
+      "tn": 8511,
+      "fp": 1489,
+      "fn": 138310,
+      "tp": 20620,
       "matrix": [
         [
-          8623,
-          1377
+          8511,
+          1489
         ],
         [
-          142016,
-          16914
+          138310,
+          20620
         ]
       ]
     }

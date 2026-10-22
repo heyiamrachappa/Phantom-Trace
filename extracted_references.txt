@@ -1,0 +1,52 @@
+References
+
+[1] Cantone M, Marrocco C, Bria A (2024) Machine learning in network intrusion detection: a cross-dataset generalization study. IEEE Access 12:144489–144508
+
+[2] Almuhanna R, Dardouri S (2025) A deep learning/machine learning approach for anomaly based network intrusion detection. Front Artif Intell 8:1625891
+
+[3] Rainio O, Teuho J, Klén R (2024) Evaluation metrics and statistical tests for machine learning. Sci Rep 14:15724
+
+[4] Semmelrock H, Ross-Hellauer T, Kopeinik S et al. (2024) Reproducibility in machine learning-based research: overview, barriers and drivers. arXiv:2406.14325
+
+[5] Xue P, Shen Y, Ma H, Hu M (2025) An area-aware efficient internet-wide port scan approach for IoT. Electronics 14(4):1267
+
+[6] Altidor JB, Talhi C (2024) Enhancing port scan and DDoS attack detection using genetic and machine learning algorithms. In: 2024 7th Conf Cloud IoT, IEEE
+
+[7] Okumura K, Kobayashi R (2025) Penetration testing without port scanning using EPSS-based vulnerability lists. In: CANDARW 2025, IEEE, pp 274–279
+
+[8] Huang M, Lin Y, Li N et al. (2025) CARD: robustness-preserving transfer learning for network intrusion detection. IEEE Trans Dependable Secure Comput 22(5):5134–5151
+
+[9] Yao J, Tian L, Wei Z, Sun G (2025) Overcoming emergency HTTP/3 DDoS attack detection: a domain adaptation solution with GNN. Comput Netw 271:111611
+
+[10] Anser O, François J, Chrisment I, Kondo D (2025) TATA: benchmark NIDS test sets assessment and targeted augmentation. In: ESORICS 2025, LNCS, pp 21–41
+
+[11] Pawlicki M, Szelest S, Kozik R, Choraś M (2025) SHAP insights into domain adaptation in netflow-based network intrusion detection. In: ARES 2025, LNCS vol 15999, Springer
+
+[12] Wu Z, Liao X, He B et al. (2025) Federated intrusion detection under non-IID traffic. In: ProvSec 2025, pp 202–217
+
+[13] Alang K, Khanna A, Nalluri S (2026) Enhancing network security: anomaly detection using generalised isolation forest and explainable AI. In: ICGIS 2025, Springer. https://doi.org/10.1007/978-3-032-02853-2_6
+
+[14] Luay M, Layeghy S, Hosseininoorbin S et al. (2025) Temporal analysis of NetFlow datasets for NIDS. arXiv:2503.04404
+
+[15] Khalid HYI, Aldabagh NBI (2024) A survey on the latest intrusion detection datasets for SDN environments. ETASR 14(2):13190–13200
+
+[16] Bilal MA, Islam IU, Idrees S et al. (2026) Dataset-centric evaluation of federated intrusion detection models in IoT networks. Sci Rep. https://doi.org/10.1038/s41598-025-32567-w
+
+[17] Psychogyios K, Papadakis A, Bourou S et al. (2024) Deep learning for intrusion detection systems in time series data. Future Internet 16(3):73
+
+[18] Pawlicki M, Pawlicka A, Szelest S et al. (2025) Class-based SHAP analysis for improved explainability insights in NIDS. In: ICAI 2024, CCIS vol 2387, Springer
+
+[19] Grzeczkowicz R, Neal C, Baghalizadeh-Moghadam N et al. (2025) Classifying insider threat scenarios through explainable AI. In: CRiSIS 2024, LNCS vol 15456, Springer
+
+[20] Goldschmidt P, Chudá D (2025) Network intrusion datasets: a survey, limitations, and recommendations. Comput Secur 156:104510
+
+[21] Belarbi O, Spyridopoulos T, Anthi E et al. (2025) Gotham Dataset 2025: a reproducible large-scale IoT network dataset for intrusion detection. arXiv:2502.03134
+
+[22] Kostas K, Just M, Lones MA (2025) Individual packet features are a risk to model generalisation in ML-based intrusion detection. IEEE Netw Lett 7:66–70
+
+[23] Aceto G, Giampaolo F, Guida C et al. (2024) Synthetic and privacy-preserving traffic trace generation using generative AI for training NIDS. J Netw Comput Appl 229:103926
+
+[24] Shaikhanova A, Kuznetsov O, Tokkuliyeva A et al. (2025) Security audit of IoT device networks: a reproducible ML framework. Sensors. https://doi.org/10.3390/s25247519
+
+[25] Mao J, Yang X, Hu B, Lu Y, Yin G (2025) Intrusion detection system based on multi-level feature extraction and inductive network. Electronics 14(1):189
+
