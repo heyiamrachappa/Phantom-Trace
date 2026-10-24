@@ -6,7 +6,7 @@
 
 set -e
 
-PROJECT_ROOT="/home/yi/Stealth System"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VENV_DIR="$PROJECT_ROOT/venv"
 
 echo "=========================================================="
@@ -22,7 +22,6 @@ mkdir -p "$PROJECT_ROOT/dashboard"
 mkdir -p "$PROJECT_ROOT/results"
 mkdir -p "$PROJECT_ROOT/logs"
 mkdir -p "$PROJECT_ROOT/configs"
-mkdir -p "$PROJECT_ROOT/src"
 
 echo "Directory structure created successfully."
 
@@ -34,7 +33,17 @@ fi
 
 # 3. Initialize virtual environment
 echo "Step 2: Creating virtual environment in $VENV_DIR..."
-python3 -m venv "$VENV_DIR"
+if ! python3 -m venv --system-site-packages "$VENV_DIR"; then
+    rm -rf "$VENV_DIR"
+    echo ""
+    echo "--------------------------------------------------------"
+    echo "[ERROR] Failed to create virtual environment."
+    echo "On Debian/Ubuntu systems, system packages need to be installed first:"
+    echo "  sudo apt update && sudo apt install -y python3-venv python3-pip libpcap-dev python3-pandas python3-numpy python3-sklearn python3-scipy python3-matplotlib python3-xgboost python3-joblib"
+    echo "Then re-run: bash setup.sh"
+    echo "--------------------------------------------------------"
+    exit 1
+fi
 
 # 4. Activate venv and install requirements
 echo "Step 3: Activating virtual environment and installing dependencies..."
@@ -61,8 +70,6 @@ if [ -f "$PYTHON_BIN" ]; then
     fi
 fi
 
-# Make src/ a python package
-touch "$PROJECT_ROOT/src/__init__.py"
 
 echo "=========================================================="
 echo "Project setup completed successfully!"
